@@ -1,0 +1,72 @@
+body {
+	font-family: sans-serif;
+}
+
+.sachovnice {
+	font-size: min(8vw, 5rem);
+	aspect-ratio: 1;
+	margin-inline: auto;
+	max-width: calc(8 * 1em + 2 * 0.5em);
+	background-color: #18204C;
+	color: #ffffff;
+	display: grid;
+	grid-template-columns: 1fr repeat(8, 1em) 1fr;
+	grid-template-rows: 1fr repeat(8, 1em) 1fr;
+}
+
+.stitky {
+	margin: 0;
+	font-size: 0.2em;
+	font-weight: bold;
+	display: grid;
+	align-items: center;
+	text-align: center;
+	padding: 0;
+	list-style-type: none;
+}
+
+.stitky:nth-child(1),
+.stitky:nth-child(2) {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.stitky:nth-child(3),
+.stitky:nth-child(4) {
+	grid-template-rows: repeat(8, 1fr);
+}
+
+.stitky:nth-child(1) {
+	grid-column: 2 / -2;
+}
+
+.stitky:nth-child(2) {
+	grid-column: 2 / -2;
+}
+
+.stitky:nth-child(3) {
+	grid-row: 2 / -2;
+}
+
+.stitky:nth-child(4) {
+	grid-row: 2 / -2;
+}
+
+.policka {
+	background-color: #DBE8EF;
+	grid-column: 2 / -2;
+	grid-row: 2 / -2;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+}
+
+.policko:nth-child(16n - 14),
+.policko:nth-child(16n - 12),
+.policko:nth-child(16n - 10),
+.policko:nth-child(16n - 8),
+.policko:nth-child(16n - 7),
+.policko:nth-child(16n - 5),
+.policko:nth-child(16n - 3),
+.policko:nth-child(16n - 1) {
+	background-color: #6D99C0;
+}
