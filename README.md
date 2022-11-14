@@ -1,0 +1,1 @@
+# Vizualizace šachovnice
