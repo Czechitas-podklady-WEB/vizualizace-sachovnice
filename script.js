@@ -1,6 +1,4 @@
-const parametrSachovnice = new URLSearchParams(window.location.search).get(
-	'sachovnice',
-)
+const parametrSachovnice = new URLSearchParams(window.location.search).get('s')
 if (parametrSachovnice === null) {
 	throw new Error('Parametr "sachovnice" v URL chybí.')
 }
