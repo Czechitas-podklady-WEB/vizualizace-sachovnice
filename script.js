@@ -1,13 +1,34 @@
-const sachovnice = [
-	[0, 0, 0, 0, 0, -4, -6, 0],
-	[0, 0, 0, 0, 0, -1, -1, -1],
-	[0, 0, -1, 0, 0, 0, 0, 0],
-	[0, -1, 1, 0, -1, 0, 0, 0],
-	[0, 1, 0, 0, 1, 0, 0, 0],
-	[0, 0, 0, 0, 0, 3, 0, 1],
-	[0, 0, 0, 0, 2, 1, 1, 0],
-	[0, 0, 0, 0, 0, 0, 6, 0],
-]
+const parametrSachovnice = new URLSearchParams(window.location.search).get(
+	'sachovnice',
+)
+if (parametrSachovnice === null) {
+	throw new Error('Parametr "sachovnice" v URL chybí.')
+}
+if (typeof parametrSachovnice !== 'string') {
+	throw new Error('Parametr v URL je ve špatném formátu.')
+}
+const sachovnice = (() => {
+	try {
+		return JSON.parse(parametrSachovnice)
+	} catch (error) {
+		throw new Error('Parametr v URL je ve špatném formátu.')
+	}
+})()
+
+if (
+	!Array.isArray(sachovnice) ||
+	sachovnice.length !== 8 ||
+	sachovnice.some(
+		(radek) =>
+			!Array.isArray(radek) ||
+			radek.length !== 8 ||
+			radek.some(
+				(policko) => typeof policko !== 'number' || Math.abs(policko) > 6,
+			),
+	)
+) {
+	throw new Error('Parametr v URL je ve špatném formátu.')
+}
 
 const radky = ['8', '7', '6', '5', '4', '3', '2', '1']
 const sloupce = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
@@ -33,10 +54,3 @@ const zobraz = (sachovnice) => {
 }
 
 zobraz(sachovnice)
-
-sachovnice[3][4] = 3
-sachovnice[5][5] = 0
-
-setTimeout(() => {
-	zobraz(sachovnice)
-}, 1000)
