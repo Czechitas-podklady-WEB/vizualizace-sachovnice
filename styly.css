@@ -51,13 +51,23 @@ body {
 	grid-row: 2 / -2;
 }
 
+.policka,
+.figurky {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+}
+
 .policka {
 	background-color: #DBE8EF;
 	grid-column: 2 / -2;
 	grid-row: 2 / -2;
-	display: grid;
-	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(8, 1fr);
+	position: relative;
+}
+
+.figurky {
+	position: absolute;
+	inset: 0;
 }
 
 .policko:nth-child(16n - 14),
@@ -69,4 +79,98 @@ body {
 .policko:nth-child(16n - 3),
 .policko:nth-child(16n - 1) {
 	background-color: #6D99C0;
+}
+
+.figurka {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.figurka--rada-1 {
+	grid-row: 8;
+}
+.figurka--rada-2 {
+	grid-row: 7;
+}
+.figurka--rada-3 {
+	grid-row: 6;
+}
+.figurka--rada-4 {
+	grid-row: 5;
+}
+.figurka--rada-5 {
+	grid-row: 4;
+}
+.figurka--rada-6 {
+	grid-row: 3;
+}
+.figurka--rada-7 {
+	grid-row: 2;
+}
+.figurka--rada-8 {
+	grid-row: 1;
+}
+
+.figurka--sloupec-a {
+	grid-column: 1;
+}
+.figurka--sloupec-b {
+	grid-column: 2;
+}
+.figurka--sloupec-c {
+	grid-column: 3;
+}
+.figurka--sloupec-d {
+	grid-column: 4;
+}
+.figurka--sloupec-e {
+	grid-column: 5;
+}
+.figurka--sloupec-f {
+	grid-column: 6;
+}
+.figurka--sloupec-g {
+	grid-column: 7;
+}
+.figurka--sloupec-h {
+	grid-column: 8;
+}
+
+.figurka--barva-cerna.figurka--typ-dama {
+	background-image: url('figurky/cerna-dama.png');
+}
+.figurka--barva-cerna.figurka--typ-kral {
+	background-image: url('figurky/cerna-kral.png');
+}
+.figurka--barva-cerna.figurka--typ-kun {
+	background-image: url('figurky/cerna-kun.png');
+}
+.figurka--barva-cerna.figurka--typ-pesec {
+	background-image: url('figurky/cerna-pesec.png');
+}
+.figurka--barva-cerna.figurka--typ-strelec {
+	background-image: url('figurky/cerna-strelec.png');
+}
+.figurka--barva-cerna.figurka--typ-vez {
+	background-image: url('figurky/cerna-vez.png');
+}
+
+.figurka--barva-bila.figurka--typ-dama {
+	background-image: url('figurky/bila-dama.png');
+}
+.figurka--barva-bila.figurka--typ-kral {
+	background-image: url('figurky/bila-kral.png');
+}
+.figurka--barva-bila.figurka--typ-kun {
+	background-image: url('figurky/bila-kun.png');
+}
+.figurka--barva-bila.figurka--typ-pesec {
+	background-image: url('figurky/bila-pesec.png');
+}
+.figurka--barva-bila.figurka--typ-strelec {
+	background-image: url('figurky/bila-strelec.png');
+}
+.figurka--barva-bila.figurka--typ-vez {
+	background-image: url('figurky/bila-vez.png');
 }
