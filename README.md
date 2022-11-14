@@ -20,9 +20,11 @@ const sachovnice = [
 
 const zobrazOdkazNaSachovnici = (data) => {
 	const url = `https://czechitas-podklady.cz/vizualizace-sachovnice/?s=${JSON.stringify(
-		sachovnice,
+		data,
 	)}`
 	document.body.innerHTML += `<p><a href="${url}">Odkaz na šachovnici: ${url}</a></p>`
 }
 zobrazOdkazNaSachovnici(sachovnice)
 ```
+
+![ukázka](ukazka.png)
